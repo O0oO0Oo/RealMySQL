@@ -21,7 +21,7 @@ https://github.com/stefanproell/flughafendb
  MySQL  localhost:3306 ssl  SQL > set global local_infile=1
  Query OK, 0 rows affected (0.0003 sec)
  
-# 3. load dump, loadIndexes=False = 세컨더리 인덱스 생성 X
+# 3. load dump
  MySQL  localhost:3306 ssl  SQL > \py
- util.load_dump(r"{file path}\flughafendb_large", threads=16, loadIndexes=False, ignoreVersion=True)
+ util.load_dump(r"{file path}\flughafendb_large", threads=16, deferTableIndexes="all", ignoreVersion=True)
 ```
